@@ -17,12 +17,11 @@ var mboggs = {
 };
 
 // lighting
-mboggs.three.dirLight.position.set(100, 100, 50);
+mboggs.three.dirLight.position.set(0, 20, 14);
 mboggs.three.dirLight.castShadow = true;
 mboggs.three.scene.add(mboggs.three.ambLight);
 mboggs.three.scene.add(mboggs.three.dirLight);
 mboggs.three.renderer.shadowMap.enabled = true;
-// mboggs.three.scene.add(new THREE.CameraHelper(mboggs.three.dirLight.shadow.camera));
 
 // floor
 mboggs.floor = new THREE.Mesh(new THREE.PlaneGeometry(12, 10, 10), new THREE.MeshLambertMaterial({color: '#ffffff'}));
@@ -34,14 +33,18 @@ mboggs.three.scene.add(mboggs.floor);
 
 // cube
 mboggs.cubes = [];
-for (var i = 0; i < 10; i += 1) {
+for (var i = 0; i < 9; i += 1) {
 	var cube = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshLambertMaterial({
 		color: getRandomColor(i)
 	}));
 	cube.castShadow = true;
 	cube.receiveShadow = true;
 	mboggs.cubes.push(cube);
-	mboggs.cubes[mboggs.cubes.length - 1].position.set(Math.random() * -6 + 3, 2.8, Math.random() * -6);
+	mboggs.cubes[mboggs.cubes.length - 1].position.set(
+		[-3, -1, 1, 3, -4, -2, 0, 2, 4][i],
+		2.8,
+		[-2, -2, -2, -2, -1, -1, -1, -1, -1][i]
+	);
 	mboggs.three.scene.add(mboggs.cubes[mboggs.cubes.length - 1]);
 }
 
@@ -54,7 +57,7 @@ function animateCube(c) {
 	if (i < mboggs.cubes.length) {
 		setTimeout(function () {
 			animateCube(mboggs.cubes[i]);
-		}, 300);
+		}, 200);
 	}
 }
 
@@ -82,7 +85,7 @@ $(window).resize(function () {
 $(window).resize();
 
 function render() {
-	requestAnimationFrame( render );
+	requestAnimationFrame(render);
 
 	for (var i = 0; i < mboggs.cubes.length; i += 1) {
 		mboggs.cubes[i].rotation.x += 0.01;
@@ -90,10 +93,10 @@ function render() {
 	}
 
 	TWEEN.update();
-	mboggs.three.renderer.render( mboggs.three.scene, mboggs.three.camera );
+	mboggs.three.renderer.render(mboggs.three.scene, mboggs.three.camera);
 }
 render();
 
 function getRandomColor(i) {
-	return ['#327ace', '#ffffff', '#222222'][i % 3];
+	return ['#327ace', '#d3d3d3', '#333'][i % 3];
 }
