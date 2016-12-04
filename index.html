@@ -1,49 +1,96 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+	<head>
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<meta charset='utf-8'>
+	<meta name="google" content="notranslate">
+	<meta http-equiv="Content-Language" content="en">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" sizes="192x192" href="img/icons/launcher-icon-4x.png">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <title>Marty Code by martyboggs</title>
-  </head>
+	<title>martyboggs</title>
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Marty Code</h1>
-        <h2>what?</h2>
-        <a href="https://github.com/martyboggs" class="button"><small>Follow me on</small> GitHub</a>
-      </div>
-    </header>
+	<meta itemprop="name" content="Marty Boggs">
+	<meta property="og:title" content="Marty Boggs">
+	<meta name="description" content="Marty Boggs">
+	<meta itemprop="description" content="Marty Boggs">
+	</head>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <p>I made a gihub page!  I guess github is not as stupid as I thought!</p>
-          <p>Here is a numbered list of all my stupid shit</p>
-          <ol>
-            <li><a href="http://martyboggs.github.io/meanChatBot">Mean Chat Bot</a></li>
-            <li><a href="http://aklosismedia.com">and more...</a></li>
-          </ol>
-        </section>
+	<body>
+		<header>
+			<div class="inner">
+				<h1>Martin Broder</h1>
+				<a href="https://github.com/martyboggs" class="button"><small>Follow me on</small> GitHub</a>
+			</div>
+		</header>
 
-        <aside id="sidebar">
+		<div id="content-wrapper">
+			<div class="inner clearfix">
+				<section id="main-content">
+					<h2>coding in many dimensions</h2>
+					<canvas id="game"></canvas>
+					<p>Here are some of my projects:</p>
+					<ol>
+						<li><a href="http://martyboggs.github.io/meanChatBot">Mean Chat Bot</a></li>
+					</ol>
+				</section>
+
+				<aside id="sidebar">
+					<p>this webpage got 1 billion hits</p>
+				</aside>
+			</div>
+		</div>
 
 
-          <p>this webpage got 1 billion hits</p>
-        </aside>
-      </div>
-    </div>
+<script>
 
+if (window.addEventListener) {
+	window.addEventListener('load', downloadJSAtOnload, false);
+} else if (window.attachEvent) {
+	window.attachEvent('onload', downloadJSAtOnload);
+} else {
+	window.onload = downloadJSAtOnload;
+}
 
-  </body>
+function downloadJSAtOnload() {
+	var element = document.createElement("script");
+	var scripts = [
+		'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js',
+		'https://www.gstatic.com/firebasejs/3.5.1/firebase.js',
+		'js/lib/three.min.js',
+		'js/lib/oimo.js',
+		'js/lib/THREEx.KeyboardState.js',
+		'js/lib/THREEx.FullScreen.js',
+		'js/lib/dat.gui.min.js',
+		'js/lib/stats.min.js',
+		'js/lib/jquery-1.11.3.min.js',
+		'js/lib/hammer.min.js',
+		'js/lib/jquery.hammer.js',
+		'js/lib/Tween.js',
+		'js/lib/howler.core.js',
+
+		'js/main.js'
+	];
+	for (var i = 0; i < scripts.length; i += 1) {
+		element = document.createElement('script');
+		element.src = scripts[i];
+		element.async = false;
+		document.body.appendChild(element);
+	}
+}
+</script>
+
+</body>
+
 </html>
