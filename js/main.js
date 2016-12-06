@@ -51,8 +51,9 @@ for (var i = 0; i < 9; i += 1) {
 var i = 0;
 animateCube(mboggs.cubes[0]);
 function animateCube(c) {
-	new TWEEN.Tween(c.position).to({y: [-3, 2.8]}, 3000)
+	var tween = new TWEEN.Tween(c.position).to({y: [-3, 2.8]}, 3000)
 		.easing(TWEEN.Easing.Sinusoidal.InOut).repeat(Infinity).start();
+	mboggs.cubes[i].tween = tween;
 	i += 1;
 	if (i < mboggs.cubes.length) {
 		setTimeout(function () {
