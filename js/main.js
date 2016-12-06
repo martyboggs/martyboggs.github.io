@@ -48,16 +48,17 @@ for (var i = 0; i < 9; i += 1) {
 	mboggs.three.scene.add(mboggs.cubes[mboggs.cubes.length - 1]);
 }
 
-var i = 0;
+var globalI = 0;
 animateCube(mboggs.cubes[0]);
 function animateCube(c) {
+	// globalI is 9 sometimes
 	var tween = new TWEEN.Tween(c.position).to({y: [-3, 2.8]}, 3000)
 		.easing(TWEEN.Easing.Sinusoidal.InOut).repeat(Infinity).start();
 	c.tween = tween;
-	i += 1;
-	if (i < mboggs.cubes.length) {
+	globalI += 1;
+	if (globalI < mboggs.cubes.length) {
 		setTimeout(function () {
-			animateCube(mboggs.cubes[i]);
+			animateCube(mboggs.cubes[globalI]);
 		}, 200);
 	}
 }

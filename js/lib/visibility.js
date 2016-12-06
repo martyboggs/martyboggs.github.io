@@ -10,16 +10,15 @@ if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and 
 	hidden = "webkitHidden";
 	visibilityChange = "webkitvisibilitychange";
 }
-console.log(hidden, visibilityChange);
 
 function handleVisibilityChange() {
-	console.log('visiblity change', hidden);
 	if (document[hidden]) {
 		for (var i = 0; i < mboggs.cubes.length; i += 1) {
-			mboggs.cubes[i].tween.stop();
+			if (mboggs.cubes[i].tween) mboggs.cubes[i].tween.stop();
+			mboggs.cubes[i].position.y = 2.8;
 		}
 	} else {
-		i = 0;
+		globalI = 0;
 		animateCube(mboggs.cubes[0]);
 	}
 }
