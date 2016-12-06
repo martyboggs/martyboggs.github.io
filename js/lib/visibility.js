@@ -10,9 +10,10 @@ if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and 
 	hidden = "webkitHidden";
 	visibilityChange = "webkitvisibilitychange";
 }
+console.log(hidden, visibilityChange);
 
 function handleVisibilityChange() {
-	console.log('visiblity', hidden);
+	console.log('visiblity change', hidden);
 	if (document[hidden]) {
 		for (var i = 0; i < mboggs.cubes.length; i += 1) {
 			mboggs.cubes[i].tween.stop();
