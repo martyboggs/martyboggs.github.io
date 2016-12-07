@@ -430,8 +430,7 @@ th {
 body {
   font-size: 15px;
   line-height: 1.5;
-  background: #fafafa url(../images/body-bg.jpg) 0 0 repeat;
-  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
   font-weight: 400;
   color: #666;
 }
@@ -448,11 +447,15 @@ a:hover {
 }
 
 header {
+  font-family: 'Bree Serif', serif;
+  background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
+}
+
+header .transparent {
+  background: linear-gradient(transparent, white);
+  height: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
-  border-bottom: solid 1px #275da1;
 }
 
 header h1 {
@@ -502,7 +505,6 @@ aside#sidebar {
   padding-left: 20px;
   min-height: 504px;
   float: right;
-  background: transparent url(../images/sidebar-bg.jpg) 0 0 no-repeat;
   font-size: 12px;
   line-height: 1.3;
 }
@@ -524,7 +526,7 @@ a.button {
   color: #fff;
   padding-left: 68px;
   padding-top: 22px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
 }
 a.button small {
   display: block;
@@ -612,7 +614,7 @@ form {
 /* GENERAL ELEMENT TYPE STYLES */
 
 #main-content h1 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 2.8em;
   font-weight: normal;
   letter-spacing: -1px;
@@ -630,9 +632,10 @@ form {
 }
 
 #main-content h2 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 22px;
   font-weight: bold;
+  margin-top: 0;
   margin-bottom: 8px;
   color: #474747;
   text-indent: 4px;
@@ -645,7 +648,7 @@ form {
 }
 
 #main-content h3 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 18px;
   font-weight: bold;
   margin-top: 24px;
@@ -662,7 +665,7 @@ form {
 }
 
 #main-content h4 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 15px;
   font-weight: bold;
   margin-bottom: 8px;
@@ -678,7 +681,7 @@ h4:before {
 }
 
 #main-content h5 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 14px;
   margin-bottom: 8px;
   color: #474747;
@@ -692,7 +695,7 @@ h5:before {
 }
 
 #main-content h6 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: .8em;
   margin-bottom: 8px;
   color: #474747;
