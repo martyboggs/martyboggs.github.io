@@ -14,7 +14,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="icon" sizes="192x192" href="img/icons/launcher-icon-4x.png">
 
-<link href='https://fonts.googleapis.com/css?family=Raleway|Bree+Serif' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:200,400|Bree+Serif' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
 <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
 <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
@@ -29,30 +29,43 @@
 
 <body>
 <header>
-	<div class="transparent">
-		<div class="inner">
-			<h1>Martin Broder</h1>
-			<a href="https://github.com/martyboggs" class="button"><small>Follow me on</small> GitHub</a>
-		</div>
+	<div class="bg"><div class="fade-white-bottom"></div></div>
+	<div class="inner">
+		<h1>Martin Broder</h1>
+		<a href="mailto:whack47@gmail.com" class="button">Contact me</a>
 	</div>
 </header>
 
 <div id="content-wrapper">
-	<div class="inner clearfix">
-		<section id="main-content">
-			<h2>coding in many dimensions</h2>
-			<canvas id="game"></canvas>
-			<p>Here are some of my projects:</p>
-			<ol>
-				<li><a href="https://martyboggs.github.io/meanChatBot">Mean Chat Bot</a></li>
-				<li><a href="https://martyboggs.github.io/recursia">Recursia</a></li>
-			</ol>
-		</section>
+	<section class="s1 flex-business">
+		<canvas class="game"></canvas>
+	</section>
 
-		<aside id="sidebar">
-			<p>this webpage got 1 billion hits</p>
-		</aside>
-	</div>
+	<section class="s2">
+		<div class="fade-white-top min-height flex-business">
+			<h2>controls: w a s d j k</h2>
+			<h4 class="game2-score" data-score="0"></h4>
+			<canvas class="game2"></canvas>
+		</div>
+	</section>
+
+	<section class="s3">
+		<div class="fade-white-bottom min-height flex-business">
+			<div class="inner">
+				<h2 class="margin-bottom"></h2>
+				<!--<div class="projects"></div>-->
+			</div>
+		</div>
+	</section>
+
+	<section class="s4">
+		<div class="fade-white-bottom min-height flex-business">
+			<div class="inner">
+				<h2 class="margin-bottom"></h2>
+			</div>
+		</div>
+	</section>
+
 </div>
 
 <script>
