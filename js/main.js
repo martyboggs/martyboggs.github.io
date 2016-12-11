@@ -37,7 +37,7 @@ var mboggs = {
 			dir: [0, 0, -1],
 			progress: [],
 			nibblet: false,
-			nibbletMaterial: new THREE.MeshLambertMaterial({color: 'yellow', transparent: true, opacity: 0.7}),
+			nibbletMaterial: new THREE.MeshBasicMaterial({color: 'yellow', transparent: true, opacity: 0.7}),
 			displacedMaterial: false,
 			starting: true,
 			score: 0
@@ -52,7 +52,7 @@ var mboggs = {
 	toRad: Math.PI / 180
 };
 
-mboggs.games.game2.head = [mboggs.games.game2.gameSize, mboggs.games.game2.gameSize, mboggs.games.game2.gameSize];
+mboggs.games.game2.head = [mboggs.games.game2.gameSize, mboggs.games.game2.gameSize, 2 * mboggs.games.game2.gameSize];
 
 // window
 mboggs.window.aspectRatio = mboggs.window.maxWidth / mboggs.window.maxHeight;
@@ -192,12 +192,12 @@ mboggs.explode = function (mesh) {
 		}
 	}
 	g.scene.add(mboggs.snake);
-
+console.log('basic');
 	var geometry = new THREE.BoxGeometry(1, 1, 1);
 	for (var x = -g.gameSize; x <= g.gameSize; x += 1) {
 		for (var y = -g.gameSize; y <= g.gameSize; y += 1) {
 			for (var z = -g.gameSize; z <= g.gameSize; z += 1) {
-				var cube = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({
+				var cube = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
 					color: getRandomColor(i),
 					transparent: true,
 					opacity: 0.1
@@ -209,7 +209,7 @@ mboggs.explode = function (mesh) {
 		}
 	}
 	mboggs.snake.position.z = -2 * g.gameSize;
-	mboggs.snakeArr[g.head[0]][g.head[1]][g.head[2]].material.opacity = 0.6;
+	// mboggs.snakeArr[g.head[0]][g.head[1]][g.head[2]].material.opacity = 0.6;
 
 	g.axis = new THREE.AxisHelper(2 * g.gameSize + 0.5);
 	g.axis.position.set(0, -g.gameSize - 0.5, -2 * g.gameSize);
@@ -295,7 +295,7 @@ mboggs.games.game2.reset = function () {
 			[g.progress[i][1]]
 			[g.progress[i][2]].material.opacity = 0.1;
 	}
-	g.head = [g.gameSize, g.gameSize, g.gameSize];
+	g.head = [g.gameSize, g.gameSize, 2 * g.gameSize];
 	g.progress.length = 0;
 	g.progress.push(g.head.concat());
 };
@@ -363,7 +363,7 @@ function render() {
 					if (!g.bit(g.head)) {
 						mboggs.snakeArr[g.head[0]][g.head[1]][g.head[2]].material.opacity = 0.6;
 						g.progress.push(g.head.concat());
-						if (g.progress.length === g.score + 3) {
+						if (g.progress.length === g.score + 4) {
 							var caboose = g.progress.shift();
 							mboggs.snakeArr[caboose[0]][caboose[1]][caboose[2]].material.opacity = 0.1;
 						}

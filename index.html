@@ -26,7 +26,7 @@
 <meta name="description" content="Marty Boggs">
 <meta itemprop="description" content="Marty Boggs">
 </head>
-
+{{ site.url }}
 <body>
 <header>
 	<div class="bg"><div class="fade-white-bottom"></div></div>
@@ -62,6 +62,27 @@
 		<div class="fade-white-bottom min-height flex-business">
 			<div class="inner">
 				<h2 class="margin-bottom"></h2>
+
+				<ul>
+					{% for post in site.posts %}
+						<li>
+							<a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
+						</li>
+					{% endfor %}
+				</ul>
+
+				{% highlight ruby %}
+					def show
+						@widget = Widget(params[:id])
+						respond_to do |format|
+							format.html # show.html.erb
+							format.json { render json: @widget }
+						end
+					end
+				{% endhighlight %}
+
 			</div>
 		</div>
 	</section>
