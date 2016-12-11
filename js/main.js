@@ -91,7 +91,7 @@ $(window).scroll(function (e) {
 	$('canvas').each(function (i) {
 		var canvas = $(this);
 		if ($(document.body).scrollTop() < canvas.offset().top + canvas.height()) {
-			if (this.className === mboggs.activeCanvas) return false;
+			if (!this.className || this.className === mboggs.activeCanvas) return false;
 			mboggs.activeCanvas = this.className;
 			console.log('canvas switched: ' + mboggs.activeCanvas);
 			mboggs.canvas = $(this);
