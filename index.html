@@ -1,35 +1,14 @@
 ---
-layout: default
 title: Marty Boggs
 ---
 <!DOCTYPE html>
-<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml" class="wf-loading">
 <head>
-<!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<meta charset='utf-8'>
-<meta name="google" content="notranslate">
-<meta http-equiv="Content-Language" content="en">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="mobile-web-app-capable" content="yes">
-<link rel="icon" sizes="192x192" href="img/icons/launcher-icon-4x.png">
-
-<link href='https://fonts.googleapis.com/css?family=Raleway:200,400|Bree+Serif' rel='stylesheet' type='text/css'>
+{% include head.html %}
 <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
 <title>martyboggs</title>
-
-<meta itemprop="name" content="Marty Boggs">
-<meta property="og:title" content="Marty Boggs">
-<meta name="description" content="Marty Boggs">
-<meta itemprop="description" content="Marty Boggs">
 </head>
+
 <body>
 <header>
 	<div class="bg"><div class="fade-white-bottom"></div></div>
@@ -45,7 +24,7 @@ title: Marty Boggs
 	</section>
 
 	<section class="s2">
-		<div class="fade-white-top min-height flex-business">
+		<div class="fade-white-top min-height flex-business padding">
 			<h2>controls: w a s d j k</h2>
 			<h4 class="game2-score" data-score="0"></h4>
 			<canvas class="game2"></canvas>
@@ -53,40 +32,49 @@ title: Marty Boggs
 	</section>
 
 	<section class="s3">
-		<div class="fade-white-bottom min-height flex-business">
+		<div class="min-height flex-business padding">
 			<div class="inner">
 				<h2 class="margin-bottom"></h2>
-				<!--<div class="projects"></div>-->
+				<div class="boxes">
+					{% for project in site.data.projects %}
+						<!--<a class="box" target="_blank" href="{{ project.slug }}">
+							<img src="/images/{{ project.image }}">
+							<div class="text">
+								<h3>{{ project.name }}</h3>
+								<p>{{ project.description }}</p>
+							</div>
+						</a>-->
+					{% endfor %}
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<section class="s4">
-		<div class="fade-white-bottom min-height flex-business">
-			<div class="inner">
-				<h2 class="margin-bottom"></h2>
-
-				<ul>
-					{{ site.url }}
-
+		<div class="fade-white-bottom min-height flex-business padding">
+			<div class="inner flex-business">
+				<h2 class="margin-bottom">{{ jekyll.environment }}</h2>
+				<div class="boxes">
 					{% for post in site.posts %}
-						<li>
-							<a href="{{ post.url }}">{{ post.title }}</a>
-							{{ post.excerpt }}
-						</li>
+						<a class="box" href="{{ post.url }}">
+							<!--<img src="/images/{{ post.image }}">-->
+							<div class="text">
+								<h3>{{ post.title }}</h3>
+								<p>{{ post.excerpt }}</p>
+							</div>
+						</a>
 					{% endfor %}
-				</ul>
+				</div>
+			</div>
+		</div>
+	</section>
 
-				{% highlight ruby %}
-					def show
-						@widget = Widget(params[:id])
-						respond_to do |format|
-							format.html # show.html.erb
-							format.json { render json: @widget }
-						end
-					end
+	<section class="s5">
+		<div class="fade-white-top min-height flex-business padding">
+			<div class="inner">
+				{% highlight javascript %}
+				var variable = 'string'
 				{% endhighlight %}
-
 			</div>
 		</div>
 	</section>
@@ -98,9 +86,10 @@ title: Marty Boggs
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-52138306-2', 'auto');
-ga('send', 'pageview');
+{% if jekyll.environment == 'development' %}
+	ga('create', 'UA-52138306-2', 'auto');
+	ga('send', 'pageview');
+{% endif %}
 </script>
 
 <script>

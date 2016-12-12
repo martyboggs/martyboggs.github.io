@@ -483,9 +483,16 @@ header .inner {
 	padding: 40px 0;
 }
 
+html {
+	transition: opacity 0.5s;
+}
+.wf-loading {
+	opacity: 0;
+}
+
 header h1 {
 	letter-spacing: -1px;
-	font-size: calc(3vw + 32px);
+	font-size: calc(2vw + 20px);
 	font-weight: normal;
 	color: #fff;
 	line-height: 1;
@@ -504,11 +511,10 @@ section {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	padding: 100px 0;
 }
 
-.s1 {
-	padding: 0;
+.padding {
+	padding: 100px 0;
 }
 
 .s2 {
@@ -521,20 +527,29 @@ section {
 
 
 
-.projects {
+.boxes {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
 }
 
-.project {
+.box {
 	display: block;
-	width: 16%;
-	height: 200px;
-	background: lightblue;
-	padding: 30px;
+	width: 22%;
+	min-height: 420px;
+	background: #ecf1ff;
 	margin-bottom: 37px;
+}
+
+.box img {
+	display: block;
+	width: 100%;
+}
+
+.box .text {
+	padding: 30px;
+	padding-top: 0;
 }
 
 #downloads {

@@ -1,20 +1,22 @@
 'use strict'
 
+WebFont.load({
+	google: {
+		families: ['Raleway:200,400', 'Bree Serif']
+	}
+});
+
+// defaults:
+//     scope:
+//     path: "projects"
+//     type: "pages"
+//     values:
+
 var keyboard = new THREEx.KeyboardState();
 var stats = new Stats();
 document.body.appendChild( stats.dom );
 
 var mboggs = {
-	projects: [
-		{name: 'MeanChatBot', slug: 'meanChatBot', image: '', description: ''},
-		{name: 'Recursia', slug: 'recursia', image: '', description: ''},
-		{name: 'Recursia', slug: 'recursia', image: '', description: ''},
-		{name: 'Recursia', slug: 'recursia', image: '', description: ''},
-		{name: 'Recursia', slug: 'recursia', image: '', description: ''},
-		{name: 'Recursia', slug: 'recursia', image: '', description: ''},
-		{name: 'Recursia', slug: 'recursia', image: '', description: ''},
-		{name: 'Recursia', slug: 'recursia', image: '', description: ''},
-	],
 	captions: [
 		'Cheese Balls and Gravy Boats'
 	],
@@ -24,13 +26,13 @@ var mboggs = {
 	games: {
 		game: {
 			scene: new THREE.Scene(),
-			renderer: new THREE.WebGLRenderer({canvas: $('canvas.game').get(0), alpha: true, antalias: false}),
+			renderer: new THREE.WebGLRenderer({canvas: $('canvas.game').get(0), alpha: true, antialias: false}),
 			ambLight: new THREE.AmbientLight('#444'),
 			dirLight: new THREE.DirectionalLight(0xffffff, 1),
 		},
 		game2: {
 			scene: new THREE.Scene(),
-			renderer: new THREE.WebGLRenderer({canvas: $('canvas.game2').get(0), alpha: true, antalias: false}),
+			renderer: new THREE.WebGLRenderer({canvas: $('canvas.game2').get(0), alpha: true, antialias: false}),
 			ambLight: new THREE.AmbientLight('#444'),
 			dirLight: new THREE.DirectionalLight(0xffffff, 1),
 			gameSize: 4,
@@ -78,13 +80,15 @@ $(window).resize(function () {
 $(window).resize();
 
 // populate projects
-for (var i = 0; i < mboggs.projects.length; i += 1) {
-	$('.projects').append(
-		'<a class="project" target="_blank" href="' + mboggs.projects[i].slug + '">' +
-			mboggs.projects[i].name +
-		'</a>'
-	);
-}
+// for (var i = 0; i < mboggs.projects.length; i += 1) {
+// 	$('.projects').append(
+// 		'<a class="project" target="_blank" href="' + mboggs.projects[i].slug + '">' +
+// 			'<img src="/images/' + mboggs.projects[i].image + '">' +
+// 			'<h3>' + mboggs.projects[i].name + '</h3>' +
+// 			'<p>' + mboggs.projects[i].description + '</p>' +
+// 		'</a>'
+// 	);
+// }
 
 // allow multiple canvases, with one active at a time
 $(window).scroll(function (e) {

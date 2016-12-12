@@ -1,0 +1,13 @@
+[
+	{"name": "MeanChatBot", "slug": "meanChatBot", "image": "meanChatBot.jpg",
+	"description": "Need somebody to talk to? Avoid the Mean Chat Bot!"},
+
+	{"name": "Recursia", "slug": "recursia", "image": "recursia.jpg",
+	"description": "Protect the Nibblets from almost certain doom as you deal with challenges facing all homeowners."},
+
+	{"name": "Claudio", "slug": "meanChatBot", "image": "meanChatBot.jpg",
+	"description": "Need somebody to talk to? Avoid the Mean Chat Bot!"},
+
+	{"name": "Au Jardin", "slug": "recursia", "image": "recursia.jpg",
+	"description": "Protect the Nibblets from almost certain doom as you deal with challenges facing all homeowners."}
+]
