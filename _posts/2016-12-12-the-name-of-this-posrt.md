@@ -1,4 +1,5 @@
 ---
+layout: post
 title: The Name of This post
 ---
 

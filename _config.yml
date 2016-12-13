@@ -1,1 +1,2 @@
-        repository: "martyboggs/martyboggs.github.io"
+repository: "martyboggs/martyboggs.github.io"
+permalink: "/:categories/:title"
