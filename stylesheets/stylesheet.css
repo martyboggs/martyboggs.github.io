@@ -416,11 +416,20 @@ th {
 
 /* LAYOUT STYLES */
 body {
-	font-size: 15px;
-	line-height: 1.5;
+	font-size: 18px;
+	line-height: 1.8;
 	font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
 	font-weight: 400;
 	color: #666;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+footer {
+	height: 300px;
+	background: black;
+	justify-content: flex-end;
 }
 
 canvas {
@@ -471,23 +480,70 @@ header h1 {
 	margin-bottom: 54px;
 }
 
-.inner {
-	max-width: 1170px;
+.blog-inner {
+	max-width: 690px;
+	margin: 0 auto;
+}
+
+.share-this-post {
+	position: fixed;
+	left: 5vw;
+}
+
+.share-this-post a {
+	display: block;
+	text-align: center;
+}
+
+.loading {
+	position: fixed;
+	z-index: -1;
 }
 
 header .inner {
-	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 40px 0;
 }
 
-html {
+img {
+	display: block;
+	max-width: 100%;
+	align-self: center;
+}
+
+.wf-loading h1,
+.wf-loading h2,
+.wf-loading p,
+.wf-loading a {
+	opacity: 0;
+}
+
+h1,
+h2,
+p,
+a {
 	transition: opacity 0.5s;
 }
-.wf-loading {
-	opacity: 0;
+
+.loading {
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	border: .25rem solid black;
+	border-top-color: gray;
+	animation: spin 1s infinite linear;
+}
+
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 header h1 {
@@ -498,12 +554,10 @@ header h1 {
 	line-height: 1;
 	margin-top: 0;
 	margin-bottom: 0;
-	width: 540px;
 }
 
 section {
 	transition: all 0.3s;
-	min-height: 500px;
 }
 
 .flex-business {
@@ -513,8 +567,17 @@ section {
 	flex-direction: column;
 }
 
+.flex-container {
+	margin: 0 calc(50vw - 585px);
+}
+@media (max-width: 1200px) {
+	.flex-container {
+		margin: 0 15px;
+	}
+}
+
 .padding {
-	padding: 100px 0;
+	padding: 10vw 0;
 }
 
 .s2 {
@@ -530,7 +593,7 @@ section {
 .boxes {
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
+	align-items: flex-start;
 	flex-wrap: wrap;
 }
 
@@ -540,6 +603,7 @@ section {
 	min-height: 420px;
 	background: #ecf1ff;
 	margin-bottom: 37px;
+	transition: all 0.3s;
 }
 
 .box img {
@@ -550,6 +614,14 @@ section {
 .box .text {
 	padding: 30px;
 	padding-top: 0;
+}
+
+.box:hover {
+	transform: scale(1.1);
+}
+
+.page-header {
+	padding: 40px 0 80px 0;
 }
 
 #downloads {
@@ -646,7 +718,7 @@ form {
 
 h1 {
 	font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
-	font-size: 2.8em;
+	font-size: calc(2vw + 20px);
 	font-weight: normal;
 	letter-spacing: -1px;
 	margin-top: 0;
@@ -658,7 +730,7 @@ h1 {
 
 h2 {
 	font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, serif;
-	font-size: 70px;
+	font-size: calc(3vw + 30px);
 	font-weight: 200;
 	margin-top: 0;
 	margin-bottom: 0px;
@@ -714,7 +786,7 @@ p a {
 }
 
 blockquote {
-	font-size: 1.6em;
+	font-size: calc(1vw + 13px);
 	border-left: 10px solid #e9e9e9;
 	margin-bottom: 20px;
 	padding: 0 0 0 30px;
@@ -733,15 +805,6 @@ ol {
 dl dd {
 	font-style: italic;
 	font-weight: 100;
-}
-
-footer {
-	background: transparent url('../images/hr.png') 0 0 no-repeat;
-	margin-top: 40px;
-	padding-top: 20px;
-	padding-bottom: 30px;
-	font-size: 13px;
-	color: #aaa;
 }
 
 footer a {

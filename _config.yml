@@ -1,2 +1,5 @@
-repository: "martyboggs/martyboggs.github.io"
-permalink: "/:categories/:title"
+name: Martin Broder
+url: https://martyboggs.github.io
+timezone: America/Los_Angeles
+repository: martyboggs/martyboggs.github.io
+permalink: /:categories/:title

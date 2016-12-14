@@ -6,11 +6,6 @@ WebFont.load({
 	}
 });
 
-// defaults:
-//     scope:
-//     path: "projects"
-//     type: "pages"
-//     values:
 
 var keyboard = new THREEx.KeyboardState();
 var stats = new Stats();
@@ -60,7 +55,7 @@ mboggs.games.game2.head = [mboggs.games.game2.gameSize, mboggs.games.game2.gameS
 mboggs.window.aspectRatio = mboggs.window.maxWidth / mboggs.window.maxHeight;
 mboggs.games[mboggs.activeCanvas].renderer.setSize( document.body.clientWidth, document.body.clientHeight );
 mboggs.camera.position.z = 5;
-$(window).resize(function () {
+setInterval(function () {
 	mboggs.window.width = mboggs.canvas.parent().width();
 	mboggs.window.height = mboggs.canvas.parent().height();
 	if (mboggs.window.windowWidth >= mboggs.window.maxWidth) {
@@ -76,19 +71,7 @@ $(window).resize(function () {
 	mboggs.games[mboggs.activeCanvas].renderer.setSize(mboggs.window.width, mboggs.window.height);
 	mboggs.camera.aspect = mboggs.window.width / mboggs.window.height;
 	mboggs.camera.updateProjectionMatrix();
-});
-$(window).resize();
-
-// populate projects
-// for (var i = 0; i < mboggs.projects.length; i += 1) {
-// 	$('.projects').append(
-// 		'<a class="project" target="_blank" href="' + mboggs.projects[i].slug + '">' +
-// 			'<img src="/images/' + mboggs.projects[i].image + '">' +
-// 			'<h3>' + mboggs.projects[i].name + '</h3>' +
-// 			'<p>' + mboggs.projects[i].description + '</p>' +
-// 		'</a>'
-// 	);
-// }
+}, 1000);
 
 // allow multiple canvases, with one active at a time
 $(window).scroll(function (e) {

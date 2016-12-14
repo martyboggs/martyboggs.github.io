@@ -10,14 +10,8 @@ title: Marty Boggs
 </head>
 
 <body>
-<header>
-	<div class="bg"><div class="fade-white-bottom"></div></div>
-	<div class="inner">
-		<h1>Martin Broder</h1>
-		<a href="mailto:whack47@gmail.com" class="button">Contact me</a>
-	</div>
-</header>
 
+{% include header.html %}
 <div id="content-wrapper">
 	<section class="s1 flex-business">
 		<canvas class="game"></canvas>
@@ -32,54 +26,56 @@ title: Marty Boggs
 	</section>
 
 	<section class="s3">
-		<div class="min-height flex-business padding">
-			<div class="inner">
-				<h2 class="margin-bottom"></h2>
-				<div class="boxes">
-					{% for project in site.data.projects %}
-						<!--<a class="box" target="_blank" href="{{ project.slug }}">
-							<img src="/images/{{ project.image }}">
-							<div class="text">
-								<h3>{{ project.name }}</h3>
-								<p>{{ project.description }}</p>
-							</div>
-						</a>-->
-					{% endfor %}
-				</div>
+		<div class="min-height flex-business flex-container padding">
+			<h2 style="color: white" class="margin-bottom">cooby doop dop</h2>
+			<div class="boxes">
+				{% for project in site.data.projects %}
+					<a class="box" target="_blank" href="{{ project.slug }}">
+						<img src="/images/{{ project.image }}">
+						<div class="text">
+							<h3>{{ project.name }}</h3>
+							<p>{{ project.description }}</p>
+						</div>
+					</a>
+				{% endfor %}
 			</div>
 		</div>
 	</section>
 
 	<section class="s4">
 		<div class="fade-white-bottom min-height flex-business padding">
-			<div class="inner flex-business">
-				<h2 class="margin-bottom">{{ jekyll.environment }}</h2>
-				<div class="boxes">
-					{% for post in site.posts %}
-						<a class="box" href="{{ post.url }}">
-							<!--<img src="/images/{{ post.image }}">-->
-							<div class="text">
-								<h3>{{ post.title }}</h3>
-								<p>{{ post.excerpt }}</p>
-							</div>
-						</a>
-					{% endfor %}
-				</div>
-			</div>
+			<img src="/images/rocket.png">
 		</div>
 	</section>
 
 	<section class="s5">
-		<div class="fade-white-top min-height flex-business padding">
-			<div class="inner">
-				{% highlight javascript linenos %}
-				var variable = 'string'
-				{% endhighlight %}
+		<div class="fade-white-top min-height flex-business flex-container padding">
+			<h2 class="margin-bottom">dooby dop baaaaahh</h2>
+			<div class="boxes">
+				{% for post in site.posts %}
+					<a class="box" href="{{ post.url }}">
+						<img src="/images/{{ post.image }}">
+						<div class="text">
+							<h3>{{ post.title }}</h3>
+							<p>{{ post.excerpt | strip_html }}</p>
+						</div>
+					</a>
+				{% endfor %}
+				{% for post in site.posts %}
+					<a class="box" href="{{ post.url }}">
+						<img src="/images/{{ post.image }}">
+						<div class="text">
+							<h3>{{ post.title }}</h3>
+							<p>{{ post.excerpt | strip_html }}</p>
+						</div>
+					</a>
+				{% endfor %}
 			</div>
 		</div>
 	</section>
 
 </div>
+{% include footer.html %}
 
 <script src="js/init.js"></script>
 </body>

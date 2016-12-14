@@ -1,0 +1,41 @@
+<section class="share-this-post">
+	<div class="share-page affix" data-spy="affix" data-offset-top="590" data-offset-bottom="960">
+
+		<a
+		{% if jekyll.production %}
+			onclick="ga('send', 'event', { eventCategory: 'Social Icons', eventAction: 'Share', eventLabel: 'Twitter'});"
+		{% endif %}
+		class="icon-twitter" href="https://twitter.com/share?text={{ page.title }}&amp;url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+
+		<a
+		{% if jekyll.production %}
+			onclick="ga('send', 'event', { eventCategory: 'Social Icons', eventAction: 'Share', eventLabel: 'Facebook'});"
+		{% endif %}
+		class="icon-facebook" href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+
+		<a
+		{% if jekyll.production %}
+			onclick="ga('send', 'event', { eventCategory: 'Social Icons', eventAction: 'Share', eventLabel: 'GPlus'});"
+		{% endif %}
+		class="icon-gplus" href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i></a>
+
+<!--		<a
+		{% if jekyll.production %}
+			onclick="ga('send', 'event', { eventCategory: 'Social Icons', eventAction: 'Share', eventLabel: 'Reddit'});"
+		{% endif %}
+		class="icon-reddit" href="http://reddit.com/submit?title=Release%20Notes:%20November%2E&amp;url={{ site.url }}{{ page.url }}" target="_blank" rel="nofollow" title="Share on Reddit"></a>-->
+
+		<a
+		{% if jekyll.production %}
+			onclick="ga('send', 'event', { eventCategory: 'Social Icons', eventAction: 'Share', eventLabel: 'Stumble'});"
+		{% endif %}
+		class="icon-stumbleupon" href="http://www.stumbleupon.com/submit?url={{ site.url }}{{ page.url }}&title={{ page.title }}" target="_blank" rel="nofollow" title="Share on StumbleUpon"><i class="fa fa-stumbleupon"></i></a>
+
+		<a
+		{% if jekyll.production %}
+			onclick="ga('send', 'event', { eventCategory: 'Social Icons', eventAction: 'Share', eventLabel: 'Email'});"
+		{% endif %}
+		class="icon-email" href="mailto:?subject=Release%20Notes:%20November&amp;body=Check out this article I found on the Help Scout blog https://www.helpscout.net/blog/november-2016-release-notes/." title="Share via Email"><i class="fa fa-envelope"></i></a>
+	</div>
+
+</section>
