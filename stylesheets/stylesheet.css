@@ -434,6 +434,7 @@ footer {
 
 canvas {
 	user-select: none;
+	transition: all 1s;
 }
 
 p {
