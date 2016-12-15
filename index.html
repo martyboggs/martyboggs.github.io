@@ -43,31 +43,35 @@ title: Marty Boggs
 	</section>
 
 	<section class="s4">
-		<div class="fade-white-bottom min-height flex-business padding">
+		<div class="min-height flex-business padding">
 			<img src="/images/rocket.png">
 		</div>
 	</section>
 
 	<section class="s5">
-		<div class="fade-white-top min-height flex-business flex-container padding">
+		<div class="min-height flex-business flex-container padding">
 			<h2 class="margin-bottom">dooby dop baaaaahh</h2>
 			<div class="boxes">
 				{% for post in site.posts %}
 					<a class="box" href="{{ post.url }}">
-						<img src="/images/{{ post.image }}">
+						<div class="bg" style="background: url('/images/{{ post.image }}') center center / cover;"></div>
 						<div class="text">
 							<h3>{{ post.title }}</h3>
+							<h5>{{ post.category }}</h5>
 							<p>{{ post.excerpt | strip_html }}</p>
 						</div>
+						<button class="btn">Read it</button>
 					</a>
 				{% endfor %}
 				{% for post in site.posts %}
 					<a class="box" href="{{ post.url }}">
-						<img src="/images/{{ post.image }}">
+						<div class="bg" style="background: url('/images/{{ post.image }}') center center / cover;"></div>
 						<div class="text">
 							<h3>{{ post.title }}</h3>
+							<h5>{{ post.category }}</h5>
 							<p>{{ post.excerpt | strip_html }}</p>
 						</div>
+						<button class="btn">Read it</button>
 					</a>
 				{% endfor %}
 			</div>

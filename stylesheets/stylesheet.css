@@ -424,6 +424,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	background: #f7f7f7;
 }
 
 footer {
@@ -456,7 +457,7 @@ header h1 {
 	font-family: 'Bree Serif', serif;
 }
 
-.bg {
+header .bg {
 	background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
 	width: 100%;
 	height: 632px;
@@ -465,12 +466,22 @@ header h1 {
 }
 
 .fade-white-bottom {
-	background: linear-gradient(transparent, white);
+	background: linear-gradient(transparent, #f7f7f7);
 	height: 100%;
 }
 
 .fade-white-top {
 	background: linear-gradient(white, transparent);
+}
+
+.tags {
+	max-width: 660px;
+	margin: 0 auto 40px auto;
+}
+.tag {
+	border: 1px solid #666;
+	display: inline-block;
+	padding: 0 5px;
 }
 
 .min-height {
@@ -482,18 +493,24 @@ header h1 {
 }
 
 .blog-inner {
-	max-width: 690px;
+	max-width: 660px;
+	padding: 15px;
 	margin: 0 auto;
+	background: white;
 }
 
+
+/*social*/
 .share-this-post {
 	position: fixed;
-	left: 5vw;
+	left: calc(50vw - 585px);
+	top: 155px;
 }
 
 .share-this-post a {
 	display: block;
 	text-align: center;
+	margin-bottom: 5px;
 }
 
 .loading {
@@ -526,25 +543,6 @@ h2,
 p,
 a {
 	transition: opacity 0.5s;
-}
-
-.loading {
-	border-radius: 50%;
-	width: 24px;
-	height: 24px;
-	border: .25rem solid black;
-	border-top-color: gray;
-	animation: spin 1s infinite linear;
-}
-
-
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
 }
 
 header h1 {
@@ -599,30 +597,60 @@ section {
 }
 
 .box {
-	display: block;
-	width: 22%;
+	display: flex;
+	flex-direction: column;
+	width: 252px;
 	min-height: 420px;
 	background: #ecf1ff;
-	margin-bottom: 37px;
+	margin: 0 15px 37px 15px;
 	transition: all 0.3s;
 }
-
-.box img {
-	display: block;
-	width: 100%;
+.box .bg {
+	height: 141px;
+	transition: all 0.2s;
 }
-
 .box .text {
-	padding: 30px;
-	padding-top: 0;
+	padding: 0 15px 15px 15px;
+}
+.box p {
+	visibility: none;
+	opacity: 0;
+	font-size: 14px;
+}
+.box button {
+	visibility: none;
+	opacity: 0;
+	margin: 0 15px 15px 15px;
+	margin-top: auto;
 }
 
 .box:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
+	box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.3);
+}
+.box:hover .bg {
+	height: 50px;
+}
+.box:hover p {
+	visibility: visible;
+	opacity: 1;
+}
+.box:hover button {
+	visibility: visible;
+	opacity: 1;
 }
 
 .page-header {
-	padding: 40px 0 80px 0;
+	padding: 60px 0;
+	background: rgba(255,255,255,0.1);
+	line-height: 1.2;
+	margin-bottom: 40px;
+}
+.page-header h1 {
+
+}
+.page-header p.author {
+	margin-bottom: 0;
 }
 
 #downloads {

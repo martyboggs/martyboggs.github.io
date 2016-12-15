@@ -2,8 +2,9 @@
 layout: post
 title: The Name of This post
 image: rocket.png
-category: Tutorial
+category: Tutorials
 tags: [first post, donuts, glitter, cheese balls, sandwiches, chinese checkers]
+author: Steve Jr.
 ---
 
 this is a test post. I wrote it in order to get an idea of how text lays on the page. The first text I wrote was too short and gave me only a vague sense of how the final blog will look, but I'm confident that with these additional sentences plus [a few code snippets](/), videos and blockquotes I'll have a good example of how this thing will look.
@@ -16,6 +17,7 @@ function doIt() {
 	};
 }
 ```
+> **Note:** Smoke weed everyday.
 
 > Blockquotes are very handy in email to emulate reply text.
 > This line is part of the same quote.
