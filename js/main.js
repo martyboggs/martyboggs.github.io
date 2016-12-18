@@ -53,7 +53,6 @@ mboggs.games.game2.head = [mboggs.games.game2.gameSize, mboggs.games.game2.gameS
 
 // window
 mboggs.window.aspectRatio = mboggs.window.maxWidth / mboggs.window.maxHeight;
-mboggs.games[mboggs.activeCanvas].renderer.setSize( document.body.clientWidth, document.body.clientHeight );
 mboggs.camera.position.z = 5;
 setInterval(function () {
 	mboggs.window.width = mboggs.canvas.parent().width();
