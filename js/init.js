@@ -33,6 +33,7 @@ function downloadJSAtOnload() {
 		'/js/lib/jquery.hammer.js',
 		'/js/lib/Tween.js',
 		'/js/lib/howler.core.js',
+		'/js/lib/slick.min.js',
 
 		'/js/lib/visibility.js',
 		'/js/main.js',

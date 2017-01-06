@@ -381,3 +381,43 @@ render();
 function getRandomColor(i) {
 	return ['#327ace', '#d3d3d3', '#333'][i % 3];
 }
+
+
+$(function () {
+	$('.boxes').slick({
+		slidesToShow: 5,
+		slidesToScroll: 2,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		arrows: false,
+		infinite: true,
+		dots: true,
+		responsive: [
+			{
+				breakpoint: 1324,
+				settings: {
+					slidesToShow: 4
+				}
+			},
+			{
+				breakpoint: 1124,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 700,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+		]
+	});
+});
