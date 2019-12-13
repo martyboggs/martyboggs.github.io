@@ -153,7 +153,7 @@ mboggs.explode = function (mesh) {
 
 		var group = new THREE.Object3D({position: mesh.position});
 		group.add(mesh, newCube);
-// console.log(group);
+
 		mboggs.games.game.scene.add(group);
 		mesh = group;
 

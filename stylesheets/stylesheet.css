@@ -741,8 +741,11 @@ footer h1:hover span {
 	color: white;
 }
 header .inner > a {
+	border: 0;
 	border-bottom: 1px solid #2879d0;
+	border-radius: 0;
 	padding: 7px 0;
+	color: #2879d0;
 }
 header .inner > a:first-child {
 	border: 0;
