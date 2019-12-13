@@ -76,7 +76,7 @@ setInterval(function () {
 $(window).scroll(function (e) {
 	$('canvas').each(function (i) {
 		var canvas = $(this);
-		if ($(document.body).scrollTop() < canvas.offset().top + canvas.height()) {
+		if (document.documentElement.scrollTop < canvas.offset().top + canvas.height()) {
 			if (!this.className || this.className === mboggs.activeCanvas) return false;
 			mboggs.activeCanvas = this.className;
 			console.log('canvas switched: ' + mboggs.activeCanvas);
@@ -128,10 +128,10 @@ function animateCube(c) {
 	var tween = new TWEEN.Tween(c.position).to({y: [-3, 2.8]}, 3000)
 		.easing(TWEEN.Easing.Sinusoidal.InOut).repeat(Infinity).start();
 	c.tween = tween;
-	globalI += 1;
-	if (globalI < mboggs.cubes.length) {
+	if (globalI < mboggs.cubes.length - 1) {
 		setTimeout(function () {
 			animateCube(mboggs.cubes[globalI]);
+			globalI += 1;
 		}, 200);
 	}
 }
@@ -178,7 +178,7 @@ mboggs.explode = function (mesh) {
 		}
 	}
 	g.scene.add(mboggs.snake);
-console.log('basic');
+
 	var geometry = new THREE.BoxGeometry(1, 1, 1);
 	for (var x = -g.gameSize; x <= g.gameSize; x += 1) {
 		for (var y = -g.gameSize; y <= g.gameSize; y += 1) {
