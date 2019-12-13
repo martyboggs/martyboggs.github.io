@@ -6,11 +6,17 @@
 	"description": "Protect the Nibblets from almost certain doom as you deal with challenges facing all homeowners."},
 
 	{"name": "Claudio", "slug": "https://www.youtube.com/watch?v=kiHke88l_nc", "image": "claudio.jpg",
-	"description": "Adventure game where you're a dog"},
+	"description": "Adventure game where you're a dog."},
 
 	{"name": "Extended Reality Game", "slug": "https://extendedreality-1382.firebaseapp.com/", "image": "extended-reality.jpg",
-	"description": "MMO - Navigate over a real map of your area"},
+	"description": "MMO - Navigate over a real map of your area."},
 
-	{"name": "Reindeer Game", "slug": "zdog", "image": "zdog.jpg",
+	{"name": "Mr. Feathers", "slug": "mr-feathers", "image": "mr-feathers.png",
+	"description": "Collect spent fuel rods"},
+
+	{"name": "Climber", "slug": "http://www.threejsworld.com/threejs-game-tutorial-climber", "image": "climber.png",
+	"description": "Climb up to collect coins."},
+
+	{"name": "Reindeer Game", "slug": "zdog", "image": "zdog.png",
 	"description": "Use magic to move reindeer."}
 ]
