@@ -776,6 +776,13 @@ section {
 	transition: all 0.3s;
 }
 
+.contact-section {
+	background: white;
+	width: 254px;
+	margin: 30px auto 10px;
+	padding: 12px;
+}
+
 .flex-business {
 	display: flex;
 	justify-content: center;
