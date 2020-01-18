@@ -1095,4 +1095,8 @@ dl dd {
 	font-style: italic;
 	font-weight: 100;
 }
-t
+
+.slick-slide img {
+	height: 184px;
+	object-fit: cover;
+}
