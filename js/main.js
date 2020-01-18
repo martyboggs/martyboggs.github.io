@@ -19,12 +19,6 @@ var mboggs = {
 	activeCanvas: 'game',
 	camera: new THREE.PerspectiveCamera(75, document.body.clientWidth / document.body.clientHeight, 0.1, 1000),
 	games: {
-		game: {
-			scene: new THREE.Scene(),
-			renderer: new THREE.WebGLRenderer({canvas: $('canvas.game').get(0), alpha: true, antialias: false}),
-			ambLight: new THREE.AmbientLight('#444'),
-			dirLight: new THREE.DirectionalLight(0xffffff, 1),
-		},
 		game2: {
 			scene: new THREE.Scene(),
 			renderer: new THREE.WebGLRenderer({canvas: $('canvas.game2').get(0), alpha: true, antialias: false}),
@@ -72,21 +66,6 @@ setInterval(function () {
 	mboggs.camera.updateProjectionMatrix();
 }, 1000);
 
-// allow multiple canvases, with one active at a time
-$(window).scroll(function (e) {
-	$('canvas').each(function (i) {
-		var canvas = $(this);
-		if (document.documentElement.scrollTop < canvas.offset().top + canvas.height()) {
-			if (!this.className || this.className === mboggs.activeCanvas) return false;
-			mboggs.activeCanvas = this.className;
-			console.log('canvas switched: ' + mboggs.activeCanvas);
-			mboggs.canvas = $(this);
-			mboggs.canvas.resize();
-			return false;
-		}
-	});
-});
-
 // lighting
 for (var game in mboggs.games) {
 	mboggs.games[game].dirLight.position.set(0, 20, 14);
@@ -95,74 +74,6 @@ for (var game in mboggs.games) {
 	mboggs.games[game].scene.add(mboggs.games[game].dirLight);
 	mboggs.games[game].renderer.shadowMap.enabled = true;
 }
-
-// floor
-mboggs.floor = new THREE.Mesh(new THREE.PlaneGeometry(12, 10, 10), new THREE.MeshLambertMaterial({color: '#ffffff'}));
-mboggs.floor.rotation.x = -90 * mboggs.toRad;
-mboggs.floor.position.y = -3.7;
-mboggs.floor.position.z = -3;
-mboggs.floor.receiveShadow = true;
-mboggs.games.game.scene.add(mboggs.floor);
-
-// cube
-mboggs.cubes = [];
-for (var i = 0; i < 9; i += 1) {
-	var cube = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshLambertMaterial({
-		color: getRandomColor(i)
-	}));
-	cube.castShadow = true;
-	cube.receiveShadow = true;
-	mboggs.cubes.push(cube);
-	mboggs.cubes[mboggs.cubes.length - 1].position.set(
-		[-3, -1, 1, 3, -4, -2, 0, 2, 4][i],
-		2.8,
-		[-2, -2, -2, -2, -1, -1, -1, -1, -1][i]
-	);
-	mboggs.games.game.scene.add(mboggs.cubes[mboggs.cubes.length - 1]);
-}
-
-// animate bouncing boxes
-var globalI = 0;
-animateCube(mboggs.cubes[0]);
-function animateCube(c) {
-	var tween = new TWEEN.Tween(c.position).to({y: [-3, 2.8]}, 3000)
-		.easing(TWEEN.Easing.Sinusoidal.InOut).repeat(Infinity).start();
-	c.tween = tween;
-	if (globalI < mboggs.cubes.length - 1) {
-		setTimeout(function () {
-			animateCube(mboggs.cubes[globalI]);
-			globalI += 1;
-		}, 200);
-	}
-}
-
-// explode
-mboggs.explode = function (mesh) {
-	console.log('explode started');
-	new TWEEN.Tween(mesh.scale).to({x: 0.001}, 3000).start().onComplete(function () {
-		console.log('explode shrink complete runs twice');
-		if (mesh.tween) mesh.tween.stop();
-
-		var newCube = new THREE.Mesh(new THREE.BoxGeometry(0.001, 1, 1), new THREE.MeshLambertMaterial({
-			color: '#327ace'
-		}));
-		newCube.castShadow = true;
-		newCube.receiveShadow = true;
-		newCube.position.set(mesh.position.x, mesh.position.y, mesh.position.z);
-		mboggs.cubes.push(newCube);
-
-		var group = new THREE.Object3D({position: mesh.position});
-		group.add(mesh, newCube);
-
-		mboggs.games.game.scene.add(group);
-		mesh = group;
-
-		// new TWEEN.Tween(group.scale).to({x: 2}, 2000).repeat(Infinity).start();
-
-	});
-};
-// mboggs.explode(mboggs.cubes[0]);
-
 
 // snake init
 (function () {
@@ -290,14 +201,14 @@ var frame60 = 0;
 function render() {
 	stats.begin();
 
-	switch (mboggs.activeCanvas) {
-		case 'game':
-			for (var i = 0; i < mboggs.cubes.length; i += 1) {
-				mboggs.cubes[i].rotation.x += 0.01;
-				mboggs.cubes[i].rotation.y += 0.01;
-			}
-		break;
-		case 'game2':
+	// switch (mboggs.activeCanvas) {
+	// 	case 'game':
+	// 		for (var i = 0; i < mboggs.cubes.length; i += 1) {
+	// 			mboggs.cubes[i].rotation.x += 0.01;
+	// 			mboggs.cubes[i].rotation.y += 0.01;
+	// 		}
+	// 	break;
+		// case 'game2':
 			var g = mboggs.games.game2;
 
 			if (keyboard.pressed('d')) {
@@ -366,8 +277,8 @@ function render() {
 					g.reset();
 				}
 			}
-		break;
-	}
+	// 	break;
+	// }
 
 	stats.end();
 	requestAnimationFrame(render);
