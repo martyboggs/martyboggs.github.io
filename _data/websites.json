@@ -1,0 +1,10 @@
+[
+    {"name": "Three.js World", "slug": "https://www.threejsworld.com/", "image": "zdog.png",
+    "description": "Site with tutorials"},
+
+    {"name": "How to Go Carbon Neutral", "slug": "https://www.howtogocarbonneutral.com/", "image": "climber.png",
+    "description": "Blog that follows Climate Change"},
+
+    {"name": "Anfela", "slug": "https://www.anfela.com/", "image": "climber.png",
+    "description": "Shopify site curator"}
+]

@@ -55,22 +55,10 @@
 	</section>
 
 	<section class="s5">
-		<%
-		var websites = [
-			{"name": "Three.js World", "slug": "https://www.threejsworld.com/", "image": "zdog.png",
-			"description": "Site with tutorials"},
-
-			{"name": "How to Go Carbon Neutral", "slug": "https://www.howtogocarbonneutral.com/", "image": "climber.png",
-			"description": "Blog that follows Climate Change"},
-
-			{"name": "Anfela", "slug": "https://www.anfela.com/", "image": "climber.png",
-			"description": "Shopify site curator"},
-		];
-		%>
 		<div class="min-height flex-business flex-container padding">
 			<h2 style="color: white" class="margin-bottom">games and experiments</h2>
 			<div class="boxes">
-				{% for website in websites %}
+				{% for website in site.data.websites %}
 					<a class="box" target="_blank" href="{{ website.slug }}">
 						<img src="/images/{{ website.image }}">
 						<div class="text">
