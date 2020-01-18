@@ -22,5 +22,7 @@
 	{"name": "MeanChatBot", "slug": "meanChatBot", "image": "meanChatBot.jpg",
 	"description": "Need somebody to talk to? Avoid the Mean Chat Bot!"},
 	
-	{"name": "GameJolt", "slug": "https://gamejolt.com/@whack47/games", "image": "climber.png", "description": "More games.. like Deliver the Cheese"},
+	{"name": "GameJolt", "slug": "https://gamejolt.com/@whack47/games", "image": "climber.png", "description": "More games.. like Deliver the Cheese"}
 ]
+
+
