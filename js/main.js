@@ -16,7 +16,7 @@ var mboggs = {
 		'Cheese Balls and Gravy Boats'
 	],
 	canvas: $('canvas.game'),
-	activeCanvas: 'game',
+	activeCanvas: 'game2',
 	camera: new THREE.PerspectiveCamera(75, document.body.clientWidth / document.body.clientHeight, 0.1, 1000),
 	games: {
 		game2: {
