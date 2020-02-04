@@ -1,4 +1,7 @@
 [
+	{"name": "Attack of the Monster Bugs", "slug": "attack-of-the-monster-bugs", "image": "attack.png",
+	"description": "Kill monster bugs."},
+
 	{"name": "Reindeer Game", "slug": "zdog", "image": "zdog.png",
 	"description": "Use magic to move reindeer."},
 
