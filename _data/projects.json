@@ -5,9 +5,6 @@
 	{"name": "Reindeer Game", "slug": "zdog", "image": "zdog.png",
 	"description": "Use magic to move reindeer."},
 
-	{"name": "Climber", "slug": "http://www.threejsworld.com/threejs-game-tutorial-climber", "image": "climber.png",
-	"description": "Climb up to collect coins."},
-
 	{"name": "Itch.io", "slug": "https://martyboggs.itch.io/", "image": "claudio.png", "description": "More games.. like Summer Runner"},
 
 	{"name": "Extended Reality Game", "slug": "https://extendedreality-1382.firebaseapp.com/", "image": "extended-reality.png",
@@ -19,6 +16,8 @@
 	{"name": "Mr. Feathers", "slug": "mr-feathers", "image": "mr-feathers.png",
 	"description": "Collect spent fuel rods"},
 	
+	{"name": "Climber", "slug": "http://www.threejsworld.com/threejs-game-tutorial-climber", "image": "climber.png", "description": "Climb up to collect coins."},
+
 	{"name": "Claudio", "slug": "https://www.youtube.com/watch?v=kiHke88l_nc", "image": "claudio.png",
 	"description": "Adventure game where you're a dog."},
 

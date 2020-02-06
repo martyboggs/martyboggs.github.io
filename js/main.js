@@ -298,7 +298,7 @@ $(function () {
 	$('.boxes').slick({
 		slidesToShow: 5,
 		slidesToScroll: 2,
-		autoplay: true,
+		// autoplay: true,
 		autoplaySpeed: 5000,
 		arrows: false,
 		infinite: true,
