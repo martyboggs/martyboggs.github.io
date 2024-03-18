@@ -1,10 +1,99 @@
----
----
 <!DOCTYPE html>
 <html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml" class="wf-loading">
 <head>
-{% include head.html %}
-<link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen">
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<meta charset='utf-8'>
+<meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="192x192" href="images/icons/launcher-icon-4x.png">
+<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/slick.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/slick-theme.css">
+
+<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+<meta itemprop="name" content="{{site.name}}">
+<meta property="og:title" content="{{site.name}}">
+<meta property="og:url" content="{{site.url}}">
+<meta property="og:site_name" content="{{site.name}}">
+<meta name="description" content="{{site.description}}">
+<meta itemprop="description" content="{{site.description}}">
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "WebPage",
+"headline": "{{page.title}}",
+"url": "http://localhost:4000/contact"}
+</script>
+<script>
+var projects = [
+	{"name": "Attack of the Monster Bugs", "slug": "attack-of-the-monster-bugs", "image": "attack.png",
+	"description": "Kill monster bugs."},
+
+	{"name": "Reindeer Game", "slug": "zdog", "image": "zdog.png",
+	"description": "Use magic to move reindeer."},
+
+	{"name": "Itch.io", "slug": "https://martyboggs.itch.io/", "image": "claudio.png", "description": "More games.. like Summer Runner"},
+
+	{"name": "Extended Reality Game", "slug": "https://extendedreality-1382.firebaseapp.com/", "image": "extended-reality.png",
+	"description": "MMO - Navigate over a real map of your area."},
+	
+	{"name": "Recursia", "slug": "recursia", "image": "recursia.jpg",
+	"description": "Protect the Nibblets from almost certain doom as you deal with challenges facing all homeowners."},
+	
+	{"name": "Mr. Feathers", "slug": "mr-feathers", "image": "mr-feathers.png",
+	"description": "Collect spent fuel rods"},
+	
+	{"name": "Climber", "slug": "http://www.threejsworld.com/threejs-game-tutorial-climber", "image": "climber.png", "description": "Climb up to collect coins."},
+
+	{"name": "Claudio", "slug": "https://www.youtube.com/watch?v=kiHke88l_nc", "image": "claudio.png",
+	"description": "Adventure game where you're a dog."},
+
+	{"name": "MeanChatBot", "slug": "meanChatBot", "image": "meanChatBot.jpg",
+	"description": "Need somebody to talk to? Avoid the Mean Chat Bot!"},
+	
+	{"name": "GameJolt", "slug": "https://gamejolt.com/@whack47/games", "image": "climber.png", "description": "More games.. like Deliver the Cheese"}
+];
+var websites = [
+    {"name": "Three.js World", "slug": "https://www.threejsworld.com/", "image": "zdog.png",
+    "description": "Site with tutorials"},
+
+    {"name": "How to Go Carbon Neutral", "slug": "https://www.howtogocarbonneutral.com/", "image": "climber.png",
+    "description": "Blog that follows Climate Change"},
+];
+setTimeout(function () {
+	for (var i = 0; i < projects.length; i += 1) {
+		document.querySelector('.projects .boxes').innerHTML += `
+		<a class="box" target="_blank" href="${projects[i].slug}">
+			<img src="images/${projects[i].image}">
+			<div class="text">
+				<h3>${projects[i].name}</h3>
+				<p>${projects[i].description}</p>
+			</div>
+		</a>
+		`;
+	}
+	for (var i = 0; i < websites.length; i += 1) {
+		document.querySelector('.websites .boxes').innerHTML += `
+		<a class="box" target="_blank" href="${websites[i].slug}">
+			<img src="images/${websites[i].image}">
+			<div class="text">
+				<h3>${websites[i].name}</h3>
+				<p>${websites[i].description}</p>
+			</div>
+		</a>
+		`;
+	}
+}, 10);
+</script>
+<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
 <title>{{site.name}}</title>
 <style>
 	button[aria-label="Share link"] {
@@ -19,10 +108,37 @@
 
 <body>
 
-{% include header.html %}
+<header>
+	<div class="bg"><div class="fade-white-bottom"></div></div>
+	<div class="inner flex-container">
+		<a href="/"><h1>Martin's cool games</h1></a>
+		<a href="mailto:whack47@gmail.com" class="button">Contact me</a>
+	</div>
+</header>
 <div id="content-wrapper">
-	<section class="s1 flex-business">
-		<div id="links-container" class="sc-bdfBwQ jrDHLp"><div data-id="360795599" itemscope="" class="sc-bdfBwQ pkAuV"><div id="360795599" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="https://martyboggs.com/art/" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ fhtMSy group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><div data-testid="LinkThumbnail" class="sc-bdfBwQ sc-gsTCUz sc-bkzZxe dgVnpq bhdLno lOvuB"></div><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">Marty AI</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: Art Gallery</title><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="https://martyboggs.com/art/"><meta itemprop="name" content="Art Gallery"><meta itemprop="description" content=""><div class="hidden"><h3>Art Gallery</h3></div></div></div><div data-id="364245450" itemscope="" class="sc-bdfBwQ pkAuV"><div id="364245450" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="https://martyboggs.com/cupcakes/" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ fhtMSy group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><div data-testid="LinkThumbnail" class="sc-bdfBwQ sc-gsTCUz sc-bkzZxe dgVnpq bhdLno lOvuB"></div><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">Vanilla Cupcakes</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: Vanilla Cupcakes</title><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="https://martyboggs.com/cupcakes/"><meta itemprop="name" content="Vanilla Cupcakes"><meta itemprop="description" content=""><div class="hidden"><h3>Vanilla Cupcakes</h3></div></div></div><div data-id="360795601" itemscope="" class="sc-bdfBwQ pkAuV"><div id="360795601" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="https://www.youtube.com/@PixelPropertyCupcakeCreations" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ fhtMSy group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><div data-testid="LinkThumbnail" class="sc-bdfBwQ sc-gsTCUz sc-bkzZxe dgVnpq bhdLno lOvuB"></div><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">Podcast - Pixel, Property and Cupcake Creations</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: Podcast - Pixel, Property and Cupcake Creations</title><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="https://www.youtube.com/@PixelPropertyCupcakeCreations"><meta itemprop="name" content="Podcast - Pixel, Property and Cupcake Creations"><meta itemprop="description" content=""><div class="hidden"><h3>Podcast - Pixel, Property and Cupcake Creations</h3></div></div></div><div data-id="360795600" itemscope="" class="sc-bdfBwQ pkAuV"><div id="360795600" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="https://littlecustomdesign.com/" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ fhtMSy group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><div data-testid="LinkThumbnail" class="sc-bdfBwQ sc-gsTCUz sc-bkzZxe dgVnpq bhdLno lOvuB"></div><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">little custom design</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: little custom design</title><desc>Customizable t-shirts, pet accessories and home decor items. Upload your own images to create one-of-a-kind gifts</desc><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="https://littlecustomdesign.com/"><meta itemprop="name" content="little custom design"><meta itemprop="description" content="Customizable t-shirts, pet accessories and home decor items. Upload your own images to create one-of-a-kind gifts"><div class="hidden"><h3>little custom design</h3><p>Customizable t-shirts, pet accessories and home decor items. Upload your own images to create one-of-a-kind gifts</p></div></div></div><div data-id="364245692" itemscope="" class="sc-bdfBwQ pkAuV"><div id="364245692" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="https://cybervisiongallery.etsy.com" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ dkgIhC group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">Cyber Vision Gallery</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: Cyber Vision Gallery</title><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="https://cybervisiongallery.etsy.com"><meta itemprop="name" content="Cyber Vision Gallery"><meta itemprop="description" content=""><div class="hidden"><h3>Cyber Vision Gallery</h3></div></div></div><div data-id="361039036" itemscope="" class="sc-bdfBwQ pkAuV"><div id="361039036" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="https://society6.com/iceberg-tiny-home" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ fhtMSy group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><div data-testid="LinkThumbnail" class="sc-bdfBwQ sc-gsTCUz sc-bkzZxe dgVnpq bhdLno lOvuB"></div><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">Iceberg Tiny Home</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: iceberg tiny home's Store | Society6</title><desc>Shop Iceberg tiny home Society6 store featuring unique designs on various products across wall art, tech accessories, apparels, home decor and other unique lifestyle goods. Worldwide shipping available</desc><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="https://society6.com/iceberg-tiny-home"><meta itemprop="name" content="iceberg tiny home's Store | Society6"><meta itemprop="description" content="Shop Iceberg tiny home Society6 store featuring unique designs on various products across wall art, tech accessories, apparels, home decor and other unique lifestyle goods. Worldwide shipping available"><div class="hidden"><h3>iceberg tiny home's Store | Society6</h3><p>Shop Iceberg tiny home Society6 store featuring unique designs on various products across wall art, tech accessories, apparels, home decor and other unique lifestyle goods. Worldwide shipping available</p></div></div></div><div data-id="360795596" itemscope="" class="sc-bdfBwQ pkAuV"><div id="360795596" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="https://www.focushomebuyers.com/" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ fhtMSy group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><div data-testid="LinkThumbnail" class="sc-bdfBwQ sc-gsTCUz sc-bkzZxe dgVnpq bhdLno lOvuB"></div><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">Focus Homebuyers</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: Focus Homebuyers</title><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="https://www.focushomebuyers.com/"><meta itemprop="name" content="Focus Homebuyers"><meta itemprop="description" content=""><div class="hidden"><h3>Focus Homebuyers</h3></div></div></div><div data-id="360795597" itemscope="" class="sc-bdfBwQ pkAuV"><div id="360795597" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="https://www.instagram.com/martybogginz" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ fhtMSy group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><div data-testid="LinkThumbnail" class="sc-bdfBwQ sc-gsTCUz sc-bkzZxe dgVnpq bhdLno lOvuB"></div><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">Instagram martybogginz</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: Instagram martybogginz</title><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="https://www.instagram.com/martybogginz"><meta itemprop="name" content="Instagram martybogginz"><meta itemprop="description" content=""><div class="hidden"><h3>Instagram martybogginz</h3></div></div></div><div data-id="364245365" itemscope="" class="sc-bdfBwQ pkAuV"><div id="364245365" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="https://martyboggs.com/beer/" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ fhtMSy group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><div data-testid="LinkThumbnail" class="sc-bdfBwQ sc-gsTCUz sc-bkzZxe dgVnpq bhdLno lOvuB"></div><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">CamBrewHouse</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: CamBrewHouse</title><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="https://martyboggs.com/beer/"><meta itemprop="name" content="CamBrewHouse"><meta itemprop="description" content=""><div class="hidden"><h3>CamBrewHouse</h3></div></div></div><div data-id="365957163" itemscope="" class="sc-bdfBwQ pkAuV"><div id="365957163" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="https://martyboggs.com/workout/?level=11" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ fhtMSy group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><div data-testid="LinkThumbnail" class="sc-bdfBwQ sc-gsTCUz sc-bkzZxe dgVnpq bhdLno lOvuB"></div><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">Workout Program</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: Workout Program</title><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="https://martyboggs.com/workout/?level=11"><meta itemprop="name" content="Workout Program"><meta itemprop="description" content=""><div class="hidden"><h3>Workout Program</h3></div></div></div><div data-id="364245138" itemscope="" class="sc-bdfBwQ pkAuV"><div id="364245138" class="sc-bdfBwQ sc-kIeTtH jAmcnV cnxSGb"></div><div data-testid="StyledContainer" class="sc-bdfBwQ sc-dmlrTW brjWHy ksgcTs group" type="CLASSIC"><a href="http://relentlessapps.com/" target="_blank" rel="noopener" data-testid="LinkButton" class="sc-pFZIQ sc-hHftDr ldGKnQ fhtMSy group" aria-describedby="profile-marty " height="auto"><div class="w-full h-full"><div data-testid="LinkThumbnail" class="sc-bdfBwQ sc-gsTCUz sc-bkzZxe dgVnpq bhdLno lOvuB"></div><p class="sc-hKgILt sc-jUEnpm gXKGT fmxDzY">Relentless Apps</p></div></a><button aria-label="Share link" class="flex absolute h-[40px] w-[40px] items-center justify-center lg:hidden lg:group-hover:flex rounded-xl hover:bg-black/10 transition z-[1] top-0 bottom-0 my-auto mx-0 right-[6px] sm:right-xs"><svg width="16" height="16" viewBox="0 0 16 16" class=""><title>Read more: Shopify Apps - Relentless Apps</title><desc>As a leading app developer for Shopify we've got a full suite of proven&nbsp;apps&nbsp;to help you grow your online store - all backed by industry-leading support.</desc><path fill="currentColor" stroke="currentColor" d="M12.6661 7.33348C12.2979 7.33348 11.9994 7.63195 11.9994 8.00014C11.9994 8.36833 12.2979 8.66681 12.6661 8.66681C13.0343 8.66681 13.3328 8.36833 13.3328 8.00014C13.3328 7.63195 13.0343 7.33348 12.6661 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M8.00057 7.33348C7.63238 7.33348 7.3339 7.63195 7.3339 8.00014C7.3339 8.36833 7.63238 8.66681 8.00057 8.66681C8.36876 8.66681 8.66724 8.36833 8.66724 8.00014C8.66724 7.63195 8.36876 7.33348 8.00057 7.33348Z"></path><path fill="currentColor" stroke="currentColor" d="M3.33333 7.33348C2.96514 7.33348 2.66667 7.63195 2.66667 8.00014C2.66667 8.36833 2.96514 8.66681 3.33333 8.66681C3.70152 8.66681 4 8.36833 4 8.00014C4 7.63195 3.70152 7.33348 3.33333 7.33348Z"></path></svg></button><meta itemprop="url" content="http://relentlessapps.com/"><meta itemprop="name" content="Shopify Apps"><meta itemprop="description" content="As a leading app developer for Shopify we've got a full suite of proven&nbsp;apps&nbsp;to help you grow your online store - all backed by industry-leading support."><div class="hidden"><h3>Shopify Apps - Relentless Apps</h3><p>As a leading app developer for Shopify we've got a full suite of proven&nbsp;apps&nbsp;to help you grow your online store - all backed by industry-leading support.</p></div></div></div></div>
+	<section class="s1 flex-business links">
+		<div>Get custom large-scale wall art
+		<div><a href="https://martyboggs.com/art" target="_blank">https://martyboggs.com/art</a></div></div>
+		<div>Vanilla Cupcakes
+		<div><a href="https://martyboggs.com/cupcakes" target="_blank">https://martyboggs.com/cupcakes</a></div></div>
+		<div>Podcast about business and technology
+		<div><a href="https://www.youtube.com/@PixelPropertyCupcakeCreations" target="_blank">https://www.youtube.com/@PixelPropertyCupcakeCreations</a></div></div>
+		<div>Customized t-shirts, hats and more
+		<div><a href="https://littlecustomdesign.com" target="_blank">https://littlecustomdesign.com</a></div></div>
+		<div>Midjourney prompts
+		<div><a href="https://cybervisiongallery.etsy.com" target="_blank">https://cybervisiongallery.etsy.com</a></div></div>
+		<div>Art prints on home decor
+		<div><a href="https://society6.com/iceberg-tiny-home" target="_blank">https://society6.com/iceberg-tiny-home</a></div></div>
+		<div>Real estate investing site
+		<div><a href="https://www.focushomebuyers.com" target="_blank">https://www.focushomebuyers.com</a></div></div>
+		<div>Connect and apply to our open positions
+		<div><a href="https://www.instagram.com/martybusinesss" target="_blank">https://www.instagram.com/martybusinesss</a></div></div>
+		<div>Microbrewery
+		<div><a href="https://martyboggs.com/beer" target="_blank">https://martyboggs.com/beer</a></div></div>
+		<div>Workout app
+		<div><a href="https://martyboggs.com/exercise" target="_blank">https://martyboggs.com/exercise</a></div></div>
+		<div>Shopify apps company
+		<div><a href="https://www.relentlessapps.com" target="_blank">https://www.relentlessapps.com</a></div></div>
 	</section>
 
 	<section class="contact-section">
@@ -41,41 +157,23 @@
 	</section>
 
 	<section class="s3">
-		<div class="min-height flex-business flex-container padding">
+		<div class="min-height flex-business flex-container padding projects">
 			<h2 style="color: white" class="margin-bottom">games and experiments</h2>
 			<div class="boxes">
-				{% for project in site.data.projects %}
-					<a class="box" target="_blank" href="{{ project.slug }}">
-						<img src="/images/{{ project.image }}">
-						<div class="text">
-							<h3>{{ project.name }}</h3>
-							<p>{{ project.description }}</p>
-						</div>
-					</a>
-				{% endfor %}
 			</div>
 		</div>
 	</section>
 
 	<section class="s4">
 		<div class="min-height flex-business padding">
-			<img src="/images/syd_mead_concept_art_neofuturistic_012.jpg">
+			<img src="images/syd_mead_concept_art_neofuturistic_012.jpg">
 		</div>
 	</section>
 
 	<section class="s5">
-		<div class="min-height flex-business flex-container padding">
+		<div class="min-height flex-business flex-container padding websites">
 			<h2 style="color: white" class="margin-bottom">websites</h2>
 			<div class="boxes">
-				{% for website in site.data.websites %}
-					<a class="box" target="_blank" href="{{ website.slug }}">
-						<img src="/images/{{ website.image }}">
-						<div class="text">
-							<h3>{{ website.name }}</h3>
-							<p>{{ website.description }}</p>
-						</div>
-					</a>
-				{% endfor %}
 			</div>
 		</div>
 	</section>
@@ -111,8 +209,7 @@
 	</section> -->
 
 </div>
-{% include footer.html %}
-
+<footer></footer>
 <script src="js/init.js"></script>
 </body>
 

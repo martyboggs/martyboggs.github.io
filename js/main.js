@@ -1,5 +1,3 @@
-'use strict'
-
 WebFont.load({
 	google: {
 		families: ['Raleway:200,400', 'Bree Serif']
@@ -15,7 +13,7 @@ var mboggs = {
 	captions: [
 		'Cheese Balls and Gravy Boats'
 	],
-	canvas: $('canvas.game'),
+	canvas: $('canvas.game2'),
 	activeCanvas: 'game2',
 	camera: new THREE.PerspectiveCamera(75, document.body.clientWidth / document.body.clientHeight, 0.1, 1000),
 	games: {
@@ -49,6 +47,8 @@ mboggs.games.game2.head = [mboggs.games.game2.gameSize, mboggs.games.game2.gameS
 mboggs.window.aspectRatio = mboggs.window.maxWidth / mboggs.window.maxHeight;
 mboggs.camera.position.z = 5;
 setInterval(function () {
+	console.log(mboggs.canvas);
+	console.log(mboggs.canvas.parent().width(), mboggs.canvas.parent().height())
 	mboggs.window.width = mboggs.canvas.parent().width();
 	mboggs.window.height = mboggs.canvas.parent().height();
 	if (mboggs.window.windowWidth >= mboggs.window.maxWidth) {

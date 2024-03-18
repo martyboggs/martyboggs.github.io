@@ -607,7 +607,7 @@ section h2 {
 	font-weight: 700;
 }
 .email-cta {
-	background: url('/images/email-bg-dark.jpg') top center;
+	background: url('../images/email-bg-dark.jpg') top center;
 	background-attachment: fixed;
 	padding: 30px;
 	margin-bottom: 30px;
@@ -789,6 +789,17 @@ section {
 	align-items: center;
 	flex-direction: column;
 }
+.links {
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.links > * {
+	margin: 30px;
+	text-align: center;
+}
+/* .links a {
+	opacity: 1;
+} */
 
 .flex-container {
 	margin: 0 calc(50% - 585px);
@@ -807,7 +818,7 @@ section {
 .s3,
 .s5 {
 	/* Background pattern from subtlepatterns.com */
-	background: url('/images/ignasi_pattern_s.jpg');
+	background: url('../images/ignasi_pattern_s.jpg');
 }
 
 .s3 .box {
@@ -839,12 +850,12 @@ section {
 	margin-bottom: 15px;
 }
 .box .body {
-	visibility: none;
-	opacity: 0;
+	/* visibility: none;
+	opacity: 0; */
 }
 .box button {
-	visibility: none;
-	opacity: 0;
+	/* visibility: none;
+	opacity: 0; */
 	margin: 0 15px 15px 15px;
 	margin-top: auto;
 }
@@ -856,24 +867,6 @@ section {
 	height: 136px;
 }
 
-.box:hover {
-	transform: scale(1.05);
-	box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.3);
-}
-.box:hover .bg {
-	height: 50px;
-}
-.box:hover .text {
-	height: calc(136px + 88px);
-}
-.box:hover p {
-	visibility: visible;
-	opacity: 1;
-}
-.box:hover button {
-	visibility: visible;
-	opacity: 1;
-}
 
 i {
 	display: inline-block;
@@ -889,7 +882,7 @@ i {
 	justify-content: space-between;
 	align-items: center;
 	/* Background pattern from subtlepatterns.com */
-	background: url('/images/ignasi_pattern_s.jpg');
+	background: url('../images/ignasi_pattern_s.jpg');
 	line-height: 1.2;
 	margin-bottom: 53px;
 }
